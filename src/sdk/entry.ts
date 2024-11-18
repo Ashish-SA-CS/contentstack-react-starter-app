@@ -24,6 +24,7 @@ const {
   REACT_APP_CONTENTSTACK_API_HOST,
   REACT_APP_CONTENTSTACK_API_KEY,
   REACT_APP_CONTENTSTACK_APP_HOST,
+  REACT_APP_CONTENTSTACK_ENVIRONMENT
 } = process.env;
 
 const customHostBaseUrl = REACT_APP_CONTENTSTACK_API_HOST? customHostUrl(
@@ -44,7 +45,12 @@ ContentstackLivePreview.init({
   stackSdk: Stack,
   clientUrlParams:{
     host: REACT_APP_CONTENTSTACK_APP_HOST
-  }
+  },
+  stackDetails: {
+    apiKey: REACT_APP_CONTENTSTACK_API_KEY as string,
+    environment: REACT_APP_CONTENTSTACK_ENVIRONMENT as string,
+  },
+  mode: "builder",
 })?.catch((error) => console.error(error));
 
 
