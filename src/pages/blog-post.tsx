@@ -41,11 +41,13 @@ export default function BlogPost({entry}:{entry:({page, blogPost}:EntryProps)=> 
   }, [blogId, lpTs, error]);
 
   const { post, banner } = getEntry;
+  console.log(post, banner)
   return (
     <>
-      {banner ? (
+      {banner?.page_components ? (
+       
         <RenderComponents
-          pageComponents={banner.page_components}
+          pageComponents={banner?.page_components}
           blogsPage
           cslp={banner?.$}
           contentTypeUid='blog_post'
