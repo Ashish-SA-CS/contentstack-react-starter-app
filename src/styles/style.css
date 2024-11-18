@@ -381,7 +381,7 @@ footer a {
   display: flex;
   justify-content: space-evenly;
   text-align: center;
-  margin: 63px;
+  padding: 63px;
   flex-wrap: wrap;
 }
 

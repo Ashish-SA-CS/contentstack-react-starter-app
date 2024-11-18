@@ -2,12 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SectionWithCards } from "../typescript/components";
 
-export default function CardSection({ cards }: SectionWithCards) {
+export default function CardSection({ cards,cslp }: SectionWithCards) {
 
   return (
-    <div className='demo-section'>
-      {cards?.map((card) => (
-        <div className='cards' key={card.title_h3}>
+    <div className='demo-section'  {...(cslp?.cards || {})}>
+      {cards?.map((card,key) => (
+        <div className='cards' key={card.title_h3}    
+        {...cslp?.["cards__" + key]}>
           {card.title_h3 && <h3 {...card.$?.title_h3 as {}}>{card.title_h3}</h3>}
           {card.description && <p {...card.$?.description as {}}>{card.description}</p>}
           <div className='card-cta'>

@@ -47,6 +47,7 @@ export default function BlogPost({entry}:{entry:({page, blogPost}:EntryProps)=> 
         <RenderComponents
           pageComponents={banner.page_components}
           blogsPage
+          cslp={banner?.$}
           contentTypeUid='blog_post'
           entryUid={banner.uid}
           locale={banner.locale}

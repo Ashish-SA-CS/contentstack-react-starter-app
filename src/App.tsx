@@ -16,6 +16,7 @@ function App() {
   const [getEntry, setEntry] = useState({} as EntryProps );
 
   function getPageRes(response: EntryProps) {
+    console.log(response)
     setEntry(response);
   }
 

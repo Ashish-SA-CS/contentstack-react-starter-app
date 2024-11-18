@@ -14,7 +14,7 @@ export default function BlogSection({blogs:fromBlog}: {blogs:FromBlog}) {
           </Link>
         )}
       </div>
-      <div className='home-featured-blogs'>
+      <div className='home-featured-blogs' {...(fromBlog?.$?.featured_blogs || {})}>
         {fromBlog.featured_blogs.map((blog) => (
           <div className='featured-blog' key={blog.title}>
             {blog.featured_image && <img src={blog.featured_image.url} alt={blog.featured_image.filename} className='blog-post-img' {...blog.featured_image.$?.url as {}} />}

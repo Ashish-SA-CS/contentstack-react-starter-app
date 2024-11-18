@@ -44,6 +44,7 @@ export default function Blog({ entry }:{entry:({page, blogPost}:EntryProps)=> vo
         <RenderComponents
           pageComponents={getEntry.page_components}
           blogsPage
+          cslp={getEntry?.$}
           contentTypeUid='page'
           entryUid={getEntry.uid}
           locale={getEntry.locale}

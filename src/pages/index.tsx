@@ -36,6 +36,7 @@ export default function Home({ entry }:{entry:({page, blogPost}:EntryProps)=> vo
   return Object.keys(getEntries).length ? (
     <RenderComponents
       pageComponents={getEntries?.page_components}
+      cslp={getEntries?.$}
       contentTypeUid='page'
       entryUid={getEntries?.uid}
       locale={getEntries?.locale}

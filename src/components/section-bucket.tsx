@@ -11,7 +11,7 @@ export default function SectionBucket({ section }: {section: SectionWithBuckets}
         {section.title_h2 && <h2 {...section.$?.title_h2 as {}}>{section.title_h2}</h2>}
         {section.description && <p {...section.$?.description as {}}>{section.description}</p>}
       </div>
-      <div className='member-section'>
+      <div className='member-section'  {...(section?.$?.buckets || {})}>
         {section.buckets?.map((bucket) => (
           <div className='content-section' key={bucket.title_h3} {...bucket.$?.description as {}}>
             {bucket.icon && <img {...bucket.icon.$?.url as {}} src={bucket.icon.url} alt='bucket icon' />}

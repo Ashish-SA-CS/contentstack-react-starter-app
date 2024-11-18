@@ -67,7 +67,10 @@ export type SectionWithCards = {
       description: string;
       call_to_action: Link;
     };
+    
   }[];
+  cslp:any
+  $?:any
 };
 
 export type OurTeam = {
